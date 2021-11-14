@@ -42,7 +42,6 @@ class Brick():
          x.append(i)
       for i in range(10, constants.MAX_Y_HALF, 50):
          y.append(i)
-      self.bricks = []
       for i in range(len(y)):
          for j in range(len(x)):
             brick = Actor()
