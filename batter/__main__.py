@@ -1,3 +1,6 @@
+import os
+os.environ['RAYLIB_BIN_PATH'] = r'cse210-batter\batter\game\raylib-2.0.0-Win64-mingw\lib'
+
 import random
 from game import constants
 from game.director import Director
@@ -10,7 +13,7 @@ from game.physics_service import PhysicsService
 from game.audio_service import AudioService
 
 # TODO: Add imports similar to the following when you create these classes
-# from game.brick import Brick
+from game.brick import Brick
 # from game.ball import Ball
 # from game.paddle import Paddle
 # from game.control_actors_action import ControlActorsAction
@@ -25,6 +28,11 @@ def main():
 
     cast["bricks"] = []
     # TODO: Create bricks here and add them to the list
+    brick = Brick()
+    brick.set_brick()
+    bricks = brick.get_bricks()
+    cast["bricks"] = bricks
+    #brick.get_x_y_bricks()
 
     cast["balls"] = []
     # TODO: Create a ball here and add it to the list
@@ -52,7 +60,7 @@ def main():
 
 
     # Start the game
-    output_service.open_window("Batter");
+    output_service.open_window("Batter")
     audio_service.start_audio()
     audio_service.play_sound(constants.SOUND_START)
     
