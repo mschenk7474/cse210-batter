@@ -1,6 +1,7 @@
 from game.actor import Actor
 from game.point import Point
 from game import constants
+import random
 
 class Brick():
    def __init__(self):
@@ -35,12 +36,15 @@ class Brick():
       # brick_3.set_height(height)
       # brick_3.set_position(position)
       # self.bricks.append(brick_3)
-
+      #MAX X = 800
+      #MAX Y/2 = 300
+      brick_y = random.randint(0, 50)
+      brick_x = random.randint(0, 100)
       x =[]
       y = []
-      for i in range(10, constants.MAX_X, 100):
+      for i in range(10, constants.MAX_X, 50): #was 100, MAX_X
          x.append(i)
-      for i in range(10, constants.MAX_Y_HALF, 50):
+      for i in range(10, constants.MAX_Y_HALF, brick_y): #was 50
          y.append(i)
       for i in range(len(y)):
          for j in range(len(x)):

@@ -14,7 +14,7 @@ IMAGE_PADDLE = os.path.join(os.getcwd(), "cse210-batter\\batter\\assets\\bat.png
 IMAGE_BALL = os.path.join(os.getcwd(), "cse210-batter\\batter\\assets\\ball.png")
 
 SOUND_START = os.path.join(os.getcwd(), "cse210-batter\\batter\\assets\start.wav")
-SOUND_BOUNCE = os.path.join(os.getcwd(), "cse210-batter\\batter\\assets\boing.wav")
+SOUND_BOUNCE = os.path.join(os.getcwd(), "cse210-batter\\batter\\assets\\boing.wav")
 SOUND_OVER = os.path.join(os.getcwd(), "cse210-batter\\batter\\assets\over.wav")
 
 BALL_X = MAX_X / 2
