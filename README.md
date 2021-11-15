@@ -38,3 +38,5 @@ root                    (project root folder)
 ## Authors
 ---
 * # TODO: Add your names and emails here
+* ~ Mason Schenk: sch19013@byui.edu
+* ~ Scott Burton: burtons@byui.edu
