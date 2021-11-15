@@ -5,11 +5,13 @@ from game import constants
 class Ball():
    def __init__(self):
       super().__init__()
-      #Just in case we want to make more balls in the future
       self._ball = []
       self._constants = constants
    
    def set_ball(self):
+      """
+      Creates the ball actor with all the properties to with it.
+      """
       ball = Actor()
       ball_position = Point(200, 500)
       ball_image = self._constants.IMAGE_BALL
@@ -25,4 +27,7 @@ class Ball():
       self._ball.append(ball)
 
    def get_ball(self):
+      """
+      Returns the ball list to be used by main.
+      """
       return self._ball

@@ -37,6 +37,7 @@ class InputService:
         if self.is_right_pressed():
             dx = 1
         
+        #Doesn't need to go up or down
         # if self.is_up_pressed():
         #     dy = -1
         

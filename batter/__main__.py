@@ -12,7 +12,7 @@ from game.output_service import OutputService
 from game.physics_service import PhysicsService
 from game.audio_service import AudioService
 
-# TODO: Add imports similar to the following when you create these classes
+
 from game.brick import Brick
 from game.ball import Ball
 from game.paddle import Paddle
@@ -27,22 +27,18 @@ def main():
     cast = {}
 
     cast["bricks"] = []
-    # TODO: Create bricks here and add them to the list
     brick = Brick()
     brick.set_brick()
     bricks = brick.get_bricks()
     cast["bricks"] = bricks
-    #brick.get_x_y_bricks()
 
     cast["balls"] = []
-    # TODO: Create a ball here and add it to the list
     ball = Ball()
     ball.set_ball()
     ball = ball.get_ball()
     cast["balls"] = ball
 
     cast["paddle"] = []
-    # TODO: Create a paddle here and add it to the list
     paddle = Paddle()
     paddle.set_paddle()
     paddle = paddle.get_paddle()
@@ -64,7 +60,6 @@ def main():
     control_actors_action = ControlActorsAction(input_service)
     handle_collisions_action = HandleCollisionsAction(physics_service)
 
-    # TODO: Create additional actions here and add them to the script
 
     script["input"] = [control_actors_action]
     script["update"] = [move_actors_action, handle_off_screen_action, handle_collisions_action]
