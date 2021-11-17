@@ -20,6 +20,7 @@ from game.control_actors_action import ControlActorsAction
 from game.handle_collisions_action import HandleCollisionsAction
 from game.handle_off_screen_action import HandleOffScreenAction
 from game.move_actors_action import MoveActorsAction
+from game.check_end import CheckEnd
 
 def main():
 
@@ -59,11 +60,12 @@ def main():
     handle_off_screen_action = HandleOffScreenAction()
     control_actors_action = ControlActorsAction(input_service)
     handle_collisions_action = HandleCollisionsAction(physics_service)
+    check_end = CheckEnd(cast)
 
 
     script["input"] = [control_actors_action]
     script["update"] = [move_actors_action, handle_off_screen_action, handle_collisions_action]
-    script["output"] = [draw_actors_action]
+    script["output"] = [check_end, draw_actors_action]
 
 
 

@@ -2,6 +2,7 @@ from time import sleep
 
 import raylibpy
 from game import constants
+from game.handle_off_screen_action import HandleOffScreenAction
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 
@@ -25,6 +26,7 @@ class Director:
         self._cast = cast
         self._script = script
         self._keep_playing = True
+        self.handle_off_screen_action = HandleOffScreenAction()
         
     def start_game(self):
         """Starts the game loop to control the sequence of play."""
@@ -33,9 +35,8 @@ class Director:
             self._cue_action("update")
             self._cue_action("output")
 
-            if len(self._cast["bricks"]) == 0:
-                # Game over
-                self._keep_playing = False
+            self._keep_playing = self._script["output"][0].if_done()
+
 
             if raylibpy.window_should_close():
                 self._keep_playing = False

@@ -14,6 +14,7 @@ class HandleOffScreenAction():
       super().__init__()
       self.constants = constants
       self.move_actors_action = MoveActorsAction()
+      self.game_done = False
 
    def execute(self, cast):
       """Executes the action using the given actors.
@@ -27,16 +28,13 @@ class HandleOffScreenAction():
       ball_velocity = ball.get_velocity()
       ball_velocity_x = ball._velocity._x
       ball_velocity_y = ball._velocity._y
+      ball_list = cast["balls"]
       if ball_x == 0:
          ball_velocity_x = ball_velocity_x * -1
          ball_velocity = Point(ball_velocity_x,ball_velocity_y)
          ball.set_velocity(ball_velocity)
       elif ball_x == 750:
          ball_velocity_x = ball_velocity_x * -1
-         ball_velocity = Point(ball_velocity_x,ball_velocity_y)
-         ball.set_velocity(ball_velocity)
-      elif ball_y == 575 or ball_y == 0:
-         ball_velocity_y = ball_velocity_y * -1
          ball_velocity = Point(ball_velocity_x,ball_velocity_y)
          ball.set_velocity(ball_velocity)
       
@@ -53,4 +51,3 @@ class HandleOffScreenAction():
          paddle_x_new_2 = min(paddle_x - paddle_dx, 735)
          paddle_position = Point(paddle_x_new_2, paddle_y)
          paddle.set_position(paddle_position)
-
