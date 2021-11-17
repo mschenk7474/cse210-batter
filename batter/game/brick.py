@@ -16,9 +16,10 @@ class Brick():
       #Makes what bricks appear random
       brick_y = random.randint(0, 50)
       brick_x = random.randint(0, 100)
+      
       x =[]
       y = []
-      for i in range(10, constants.MAX_X, 50):
+      for i in range(10, constants.MAX_X - 15, 50):
          x.append(i)
       for i in range(10, constants.MAX_Y_HALF, brick_y):
          y.append(i)

@@ -3,6 +3,7 @@ from game.point import Point
 from game import constants
 from game.actor import Actor
 from game.move_actors_action import MoveActorsAction
+from game.paddle import Paddle
 
 class HandleOffScreenAction():
    """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -33,7 +34,7 @@ class HandleOffScreenAction():
          ball_velocity_x = ball_velocity_x * -1
          ball_velocity = Point(ball_velocity_x,ball_velocity_y)
          ball.set_velocity(ball_velocity)
-      elif ball_x == 750:
+      elif ball_x == 800: #was 750
          ball_velocity_x = ball_velocity_x * -1
          ball_velocity = Point(ball_velocity_x,ball_velocity_y)
          ball.set_velocity(ball_velocity)
@@ -43,11 +44,14 @@ class HandleOffScreenAction():
       paddle_x = paddle._position.get_x()
       paddle_y = paddle._position.get_y()
       paddle_dx = paddle._velocity._x
+      paddle_width = self.constants.PADDLE_WIDTH
+      max_x = self.constants.MAX_X
+      paddle_x_bound = max_x + paddle_width
       if paddle_x == 0:
          paddle_x_new = max(paddle_x - paddle_dx, 0)
          paddle_position = Point(paddle_x_new, paddle_y)
          paddle.set_position(paddle_position)
-      elif paddle_x == 750:
-         paddle_x_new_2 = min(paddle_x - paddle_dx, 735)
+      elif paddle_x == 750: #was 750
+         paddle_x_new_2 = min(paddle_x - paddle_dx, paddle_x_bound ) #was 735
          paddle_position = Point(paddle_x_new_2, paddle_y)
          paddle.set_position(paddle_position)
