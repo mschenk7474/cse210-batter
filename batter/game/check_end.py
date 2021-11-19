@@ -1,4 +1,3 @@
-
 class CheckEnd():
    def __init__(self, cast):
       self._cast = cast
